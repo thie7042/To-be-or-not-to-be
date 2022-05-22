@@ -1,0 +1,39 @@
+ Population contains individual genomes
+
+ Genomes contain two sets of genes:
+ 1. The node genes, each which describes a single neuron
+ 2. The connection genes between neurons
+
+
+ Fitness function
+ Computes a single real number indicating the quality of the solution
+ Higher score = better (maximization)
+
+
+ Number of generations is user-specified
+
+ Each generation is created through reproduction, (crossover) and mutation
+
+
+ Reproduction and mutation:
+ May add or remove nodes and/or connections
+ This increases/decreases complexity
+
+
+
+ algorithm terminates if convergence is achieved
+ OR if we reach final number of generations
+ OR if we reach max fitness criterion . Algorithm terminates
+
+
+ Implementation of crossover is difficult
+ How do we crossover networks with different strcutures?
+ NEAT tacks the origin of the nodse witha n identifying number
+ NEw, higher numbers are generated for each additional node
+ Those that are derived from a common ancestor(That are homogenous) are matched up for crossover
+ Connections are matched if the nodes they connect have  common ancestry
+
+ Another difficulty: Structural mutation (i.e wights of the connections)
+ NEAT divides genomes into species which have a close genomic distance
+ Genomic distance is measured as a combination of the number of non-homologous nodes and connections with measures of how much homogenous nodes and connections ahve diverged
+ Non-homogenous nodes and connections are termed "Disjoint" or "excess" 
